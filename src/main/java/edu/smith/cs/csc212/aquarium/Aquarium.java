@@ -60,6 +60,7 @@ public class Aquarium extends GFX {
 		nemo.draw(g);
 		nemo.swim();
 		marlin.draw(g);
+		marlin.swim();
 
 		// Draw our snail!
 		algorithm.draw(g);

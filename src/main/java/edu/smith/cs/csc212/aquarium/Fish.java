@@ -2,6 +2,7 @@ package edu.smith.cs.csc212.aquarium;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.util.Random;
 
 public class Fish {
 	// Every fish has an x which is an int.
@@ -21,8 +22,8 @@ public class Fish {
 		this.y = startY;
 		this.isLittle = isLittle;
 		
-		this.destX = 450;
-		this.destY =450;
+		this.destX = this.x;
+		this.destY = this.y;
 	}
 	
 	public void draw(Graphics2D g) {
@@ -42,6 +43,16 @@ public class Fish {
 	}
 	
 	public void swim() {
+		if (this.x == this.destX || this.y == this.destY) {
+			Random rand = new Random();
+			this.destX = rand.nextInt(500);
+			this.destY = rand.nextInt(500);
+			if (this.x > this.destX) {
+				this.facingLeft = true;
+			} else if (this.x < this.destX) {
+				this.facingLeft = false;
+			}
+		}
 		if (this.y < this.destY) {
 		this.y += 1;
 		} else if (this.y > this.destY) {
