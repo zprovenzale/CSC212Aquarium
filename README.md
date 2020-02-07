@@ -20,7 +20,7 @@ There are a lot of steps here! Don't try to memorize them. Whenever you click ne
 
 # Aquarium Assignment Grading Rubric
 
-***Due Date***: September 20, 2019.
+***Due Date***: February 13, 2020.
 
 Remember that we will have a new assignment opening on that day, so don't save it until the last minute!
 
