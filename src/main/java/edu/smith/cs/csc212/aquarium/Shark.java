@@ -43,8 +43,13 @@ public class Shark {
 	}
 	
 	public void draw(Graphics2D g) {
-		DrawFish.facingLeft(g, Color.gray, this.x, this.y);
+		if(facingLeft == true) {
+			DrawFish.facingLeft(g, Color.gray, this.x, this.y);
+		} else {
+			DrawFish.facingRight(g, Color.gray, this.x, this.y);
+		}
 	}
+		
 	
 	/*
 	 * public void makeFish(int numFish) { this.numFish = numFish;
