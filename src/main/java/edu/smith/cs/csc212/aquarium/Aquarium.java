@@ -2,8 +2,16 @@ package edu.smith.cs.csc212.aquarium;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Shape;
+import java.awt.geom.Rectangle2D;
 
 import me.jjfoley.gfx.GFX;
+import java.awt.Graphics2D;
+import java.awt.Graphics2D;
+
+import java.awt.Graphics2D;
+
+import java.awt.Graphics2D;
 
 /**
  * Aquarium is a graphical "application" that uses some code I built and have
@@ -40,27 +48,64 @@ public class Aquarium extends GFX {
 		// Don't change this here, edit the variables instead.
 		super(WIDTH, HEIGHT);
 	}
-
-	int fish1X = getWidth() + 100;
-	int fish2X = getWidth() + 300;
-	int fish3X = 200;
+	
+	Fish[] fish = new Fish[2];
+	
+	Fish aFish = new Fish(Color.magenta, 
+			300, 250, true, true);
+	//fish[0] = aFish; 
+	//fish[1] = new Fish(Color.orange,
+	//		100, 100, true, true);
+	
+	//Shark shark = new Shark(fish);
+	Shark shark = new Shark();
+	
+	//shark.makeFish(1);
 	
 	Fish nemo = new Fish(Color.magenta,
 			250, 250, true, true);
 	Fish marlin = new Fish(Color.orange,
-			100, 100, false, true);
+			100, 100, true, true);
+
+	//Shark shark = new Shark();
 	
+	//shark.makeFish(1);
+	
+	//shark.makeFish(1);
+
+
+
+	
+	BubbleSystem bubbleSystem = new BubbleSystem(30);
+	
+	Shape chest = new Rectangle2D.Double(200, -200, 100, 50);
+
+	 
 	@Override
 	public void draw(Graphics2D g) {
 		// Draw the "ocean" background.
 		g.setColor(Color.blue);
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
-		//DrawFish.smallFacingLeft(g, nemo.color, nemo.x, nemo.y);
-		nemo.draw(g);
-		nemo.swim();
-		marlin.draw(g);
-		marlin.swim();
+		//nemo.draw(g);
+		//nemo.swim();
+		
+		//marlin.draw(g);
+		//marlin.swim();
+		
+		shark.draw(g);
+		shark.swim();
+		
+		shark.drawFish(g);
+		shark.swimFish();
+		
+		bubbleSystem.draw(g);
+		bubbleSystem.rise();
+		bubbleSystem.wiggle();
+		
+		g.setColor(Color.orange);
+		g.fillRect(320, 430, 150, 70);
+		
 
 		// Draw our snail!
 		algorithm.draw(g);
